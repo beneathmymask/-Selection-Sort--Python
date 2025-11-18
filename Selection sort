@@ -1,0 +1,17 @@
+vetor = [] # Inicializa um vetor vazio para armazenar os números digitados pelo usuário.
+
+print("Digite os 20 números na ordem que quiser:")
+
+for x in range(20): # Loop para ler 20 números do usuário.
+    num = int(input(f"Número {x + 1}: ")) 
+    vetor.append(num) # Adiciona o número digitado ao final do vetor.
+
+for i in range(20): # Loop para percorrer cada posição do vetor.
+    menor = i # Inicializa a variável menor com o índice i.
+    for j in range(i + 1, 20): # Percorre o vetor a partir da posição i + 1 até o final do vetor.
+        if vetor[j] < vetor[menor]: # Compara o valor na posição j com o valor na posição menor.
+            menor = j # Se o valor na posição j for menor, atualiza a variável menor para j.
+    vetor[i], vetor[menor] = vetor[menor], vetor[i] # Os valores armazenados nas posições i e menor são trocados de lugar.
+
+print("Vetor ordenado:")
+print(vetor)
